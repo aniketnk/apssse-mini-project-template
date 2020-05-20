@@ -1,7 +1,7 @@
 TARGET=mytest.out
 USN?=PES1200000
 CC=gcc
-CFLAGS=-g -Wall
+CFLAGS=-g -Wall -Wpedantic -Werror -std=c99
 
 all: $(TARGET)
 	./$(TARGET)
