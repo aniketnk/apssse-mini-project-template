@@ -61,8 +61,9 @@ char* intal_factorial(unsigned int n);
 // 0 <= k <= n
 // C(n,k) < 10^1000 because the returning value is expected to be less than 10^1000.
 // Use the Pascal's identity C(n,k) = C(n-1,k) + C(n-1,k-1)
-// Make sure the intermediate intal values do not cross C(n.k).
-// Use Dynamic Programming
+// Make sure the intermediate intal values do not cross C(n,k).
+// Use Dynamic Programming. Use extra space of not more than O(k) number of intals. Do not allocate the whole O(nk) DP table.
+// Don't let C(1000,900) take more time than C(1000,500). Time limit may exceed otherwise.
 char* intal_bincoeff(unsigned int n, unsigned int k);
 
 // Returns the offset of the largest intal in the array.
@@ -97,6 +98,6 @@ void intal_sort(char **arr, int n);
 // The goal is to pick up the maximum amount of money subject to the constraint that
 // no two coins adjacent in the initial row can be picked up.
 // 1 <= n <= 1000
-// The implementation should be O(n) time and O(1) extra space.
+// The implementation should be O(n) time and O(1) extra space even though the DP table may be of O(n) size.
 // Eg: Coins = [10, 2, 4, 6, 3, 9, 5] returns 25
 char* coin_row_problem(char **arr, int n);
